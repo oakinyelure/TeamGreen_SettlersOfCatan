@@ -10,6 +10,7 @@ import javax.swing.SwingUtilities;
 import board.DevCard;
 /**
  * Created by Olusegun on 9/27/2016.
+ * This is the entry point of the Game.
  */
 public class GameRunner {
     private static Player currentPlayer;
