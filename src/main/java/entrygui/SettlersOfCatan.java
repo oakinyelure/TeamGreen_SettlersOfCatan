@@ -45,17 +45,23 @@ public class SettlersOfCatan extends Application {
         menuBar.getMenus().addAll(viewMembers,viewSourceCode,viewGameInstructions,exit);
 
         //start of right Box
-        HBox hBox = new HBox();
+        VBox vBox = new VBox(10);
+
+        //start button
         Button startButton = new Button("Start Game");
         startButton.setPrefSize(200,100);
         startButton.setStyle("-fx-background-color: #E5785B");
 
+        //exit button
+        Button exitButton = new Button("Exit Game");
+        exitButton.setPrefSize(200,100);
+        exitButton.setStyle("-fx-background-color: #E5785B");
 
         //startButton.setStyle("-fx-padding : 10");
-        hBox.getChildren().addAll(startButton);
+        vBox.getChildren().addAll(startButton, exitButton);
         //hBox.setMargin(startButton, new Insets(40.0,40.0,0.8,0.4));
-        hBox.setAlignment(Pos.CENTER);
-        hBox.setStyle("-fx-background-color : #5B97E5");
+        vBox.setAlignment(Pos.CENTER);
+        vBox.setStyle("-fx-background-color : #5B97E5");
 
         //start of center
         Pane centerContent = new Pane();
@@ -89,7 +95,7 @@ public class SettlersOfCatan extends Application {
         //start adding menu panes to borderpane
 
         root.setTop(menuBar);
-        root.setRight(hBox);
+        root.setRight(vBox);
         root.setCenter(centerContent);
         root.setBottom(footer);
 
