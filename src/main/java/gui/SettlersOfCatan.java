@@ -1,4 +1,4 @@
-package entrygui;/**
+package gui;/**
  * Created by Olusegun on 9/28/2016.
  */
 
