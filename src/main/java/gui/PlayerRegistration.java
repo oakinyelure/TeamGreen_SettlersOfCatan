@@ -21,12 +21,12 @@ public class PlayerRegistration extends Application {
         Pane root = new Pane();
         GridPane content = new GridPane();
 
-        BackgroundImage bImage = new BackgroundImage(new Image("/images/splashImage.jpg"), BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT);
-        content.setBackground(new Background(bImage));
+        BackgroundImage bImage = new BackgroundImage(new Image("/images/playerRegistration.jpg",670,580,false,true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT);
+        root.setBackground(new Background(bImage));
 
         root.getChildren().add(content);
 
-        Scene scene = new Scene(root, 600, 600);
+        Scene scene = new Scene(root, 650,550);
 
         primaryStage.setScene(scene);
         primaryStage.setTitle("Player Registration");
