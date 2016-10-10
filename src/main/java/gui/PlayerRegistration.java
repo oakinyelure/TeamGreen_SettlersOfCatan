@@ -29,7 +29,7 @@ public class PlayerRegistration extends Application {
         root.setBackground(new Background(bImage));
 
         GridPane content = new GridPane();
-        
+
 
         root.getChildren().add(content);
 
