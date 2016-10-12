@@ -21,11 +21,6 @@ public class PlayerRegistration extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Image player1 = new Image("images/redknight.jpg");
-        Image player2 = new Image("images/blueknight.jpg");
-        Image player3 = new Image("images/greenknight.png");
-        Image player4 = new Image("images/yellowknight.png");
-
 
         Pane root = new Pane();
         BackgroundImage bImage = new BackgroundImage(new Image("/images/playerRegistration.jpg",870,670,false,true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT);
@@ -33,12 +28,10 @@ public class PlayerRegistration extends Application {
 
         GridPane content = new GridPane();
 
-        ImageView player1Image = new ImageView();
-        player1Image.setImage(player1);
-
-        ImageView player2Image = new ImageView();
-        player2Image.setImage(player2);
-
+        ImageView player1Image = new ImageView(new Image("images/redknight.jpg"));
+        ImageView player2Image = new ImageView(new Image("images/blueknight.jpg")); 
+        ImageView player3Image = new ImageView(new Image("images/greenknight.png"));       
+        ImageView player4Image = new ImageView(new Image("images/yellowknight.png"));
 
 
         root.getChildren().add(content);
