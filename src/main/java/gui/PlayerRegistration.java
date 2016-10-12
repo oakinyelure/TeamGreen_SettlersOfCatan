@@ -9,7 +9,10 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 public class PlayerRegistration extends Application {
+    ArrayList userNames = new ArrayList();
 
     public static void main(String[] args) {
         launch(args);
@@ -18,10 +21,10 @@ public class PlayerRegistration extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        ImageView player1 = new ImageView();
-        ImageView player2 = new ImageView();
-        ImageView player3 = new ImageView();
-        ImageView player4 = new ImageView();
+        Image player1 = new Image("images/redknight.jpg");
+        Image player2 = new Image("images/blueknight.jpg");
+        Image player3 = new Image("images/greenknight.png");
+        Image player4 = new Image("images/yellowknight.png");
 
 
         Pane root = new Pane();
@@ -29,6 +32,13 @@ public class PlayerRegistration extends Application {
         root.setBackground(new Background(bImage));
 
         GridPane content = new GridPane();
+
+        ImageView player1Image = new ImageView();
+        player1Image.setImage(player1);
+
+        ImageView player2Image = new ImageView();
+        player2Image.setImage(player2);
+
 
 
         root.getChildren().add(content);
