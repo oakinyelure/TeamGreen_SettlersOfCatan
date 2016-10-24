@@ -26,7 +26,7 @@ public class PlayerRegistration extends Application {
     Collection <String> images = new ArrayList<>();
     ArrayList<Node> imageViews = new ArrayList<Node>();
     List<String>  imgFilesObject= new ArrayList<>();
-    public final int numOfPlayer = 4;
+    public final int numOfPlayer = 3;
 
 
 
@@ -38,6 +38,11 @@ public class PlayerRegistration extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
+        //looping through image view.
+        for(int count = 0; count <= numOfPlayer; count++){
+            imageViews.add(new ImageView(new Image(imgFiles[count])));
+        }
         Pane root = new Pane();
 
         BorderPane bPane = new BorderPane();
@@ -50,12 +55,13 @@ public class PlayerRegistration extends Application {
         root.setBackground(new Background(bImage));
 
         GridPane content = new GridPane();
+        content.getChildren().add(imageViews.get(0));
         content.getStyleClass().add("playersCOntainer");
         content.setHgap(180);
         content.setVgap(15);
+        content.setPrefSize(300,300);
 
-
-
+        //This might have to be deleted depending on outcome of Imageview object loop above.
         Label player1Label = new Label("Player1");
         ImageView player1Image = new ImageView(new Image("/images/redknight.png", 100,100,false,true));
 

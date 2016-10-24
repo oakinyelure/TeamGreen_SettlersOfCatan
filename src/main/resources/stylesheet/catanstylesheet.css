@@ -1,7 +1,7 @@
 .playersCOntainer {
     -fx-border-color : black;
     -fx-border-width : 1;
-    -fx-border-radius : 20;
+    -fx-border-radius : 2;
     -fx-border-style : dotted;
     -fx-padding: 5 22 5 22;
     -fx-background-color: #00FFFF;
