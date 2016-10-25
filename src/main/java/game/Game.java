@@ -141,6 +141,7 @@ public class Game {
 
         Collections.shuffle(res);
 
+        //size would not be 0 here. It would be player resources size/2
         if (res.size() <= 0) {
             return;
         }

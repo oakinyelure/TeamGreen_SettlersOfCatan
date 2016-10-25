@@ -7,6 +7,7 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFieldBuilder;
@@ -21,11 +22,14 @@ import java.util.Collection;
 import java.util.List;
 
 public class PlayerRegistration extends Application {
-    String[] imgFiles = {"/images/redknight.png","/images/blueknight.png","/images/greenknight.png","/images/yellowknight.png",};
+    String[] imgFiles = {"/images/redknight.png","/images/blueknight.png","/images/greenknight.png","/images/yellowknight.png"};
     ArrayList userNames = new ArrayList();
     Collection <String> images = new ArrayList<>();
     ArrayList<Node> imageViews = new ArrayList<Node>();
+    List<Node> label = new ArrayList<Node>();
+    List<TextField> inputFields = new ArrayList<>();
     List<String>  imgFilesObject= new ArrayList<>();
+    Button submitButton;
     public final int numOfPlayer = 3;
 
 
@@ -38,53 +42,65 @@ public class PlayerRegistration extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
+        int playerNum = 1;
         //looping through image view.
         for(int count = 0; count <= numOfPlayer; count++){
             imageViews.add(new ImageView(new Image(imgFiles[count])));
+            label.add(new Label("Player" + "name"));
+            inputFields.add(new TextField());
+            inputFields.get(count).setPromptText("Enter Player " + playerNum++ + "name");
+
         }
         Pane root = new Pane();
-
         BorderPane bPane = new BorderPane();
-        HBox hb = new HBox(10);
+        HBox header = new HBox(12);
+        HBox footer = new HBox(5);
+        GridPane content = new GridPane();
 
-        hb.setPrefHeight(220.0);
+        Button submitButton = new Button("Start Game");
+
+        submitButton.requestFocus();
 
 
-        BackgroundImage bImage = new BackgroundImage(new Image("/images/playerRegistration.jpg",870,670,false,true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT);
+        header.setPrefHeight(220.0);
+
+
+        BackgroundImage bImage = new BackgroundImage(new Image("/images/splashImage.jpg",870,670,false,true), BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER,BackgroundSize.DEFAULT);
         root.setBackground(new Background(bImage));
 
-        GridPane content = new GridPane();
-        content.getChildren().add(imageViews.get(0));
+
+
+        //Add imageview, label and textfield to content.
+        /* TODO Instead of adding content to grid, it can be looped. Would figure out how to loop through the grid without affecting the behaviour of @param(i)
+        for(int i = 0; i <= numOfPlayer; i++) {
+            content.setConstraints(imageViews.get(i),i,i);
+            content.getChildren().add(imageViews.get(i));
+        }
+        */
         content.getStyleClass().add("playersCOntainer");
-        content.setHgap(180);
+        content.setHgap(18);
         content.setVgap(15);
-        content.setPrefSize(300,300);
+        content.setPrefSize(600,400);
+        content.setOpacity(0.8);
 
-        //This might have to be deleted depending on outcome of Imageview object loop above.
-        Label player1Label = new Label("Player1");
-        ImageView player1Image = new ImageView(new Image("/images/redknight.png", 100,100,false,true));
 
-        Label player2Label = new Label("Player 2");
-        ImageView player2Image = new ImageView(new Image("/images/blueknight.png", 100, 100, false, true));
-
-        Label player3Label = new Label("player 3");
-        ImageView player3Image = new ImageView(new Image("/images/greenknight.png", 100, 100, false, true));
-
-        Label player4Label = new Label("Player 4");
-        ImageView player4Image = new ImageView(new Image("/images/yellowknight.png", 100, 100, false, true));
-
-        bPane.setMargin(content, new Insets(0,0,0,160));
+        bPane.setMargin(content, new Insets(0,0,0,120));
         bPane.setCenter(content);
-        bPane.setTop(hb);
-        content.add(player1Label,0, 0);
-        content.add(player1Image,0,1);
-        content.add(player2Label,1, 0);
-        content.add(player2Image,1,1);
-        content.add(player3Label,0,2);
-        content.add(player3Image,0,3);
-        content.add(player4Label,1,2);
-        content.add(player4Image,1,3);
+        bPane.setTop(header);
+        bPane.setBottom(footer);
+
+        footer.getChildren().add(submitButton);
+
+
+
+        content.add(imageViews.get(0),0, 0);
+        content.add(inputFields.get(0),1,0);
+        content.add(imageViews.get(1),2,0);
+        content.add(inputFields.get(1),3,0);
+        content.add(imageViews.get(2),0,1);
+        content.add(inputFields.get(2),1,1);
+        content.add(imageViews.get(3),2,1);
+        content.add(inputFields.get(3),3,1);
 
 
         root.getChildren().add(bPane);
