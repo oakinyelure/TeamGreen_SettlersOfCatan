@@ -1,29 +1,24 @@
 package gui;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
  * Created by Olusegun on 9/27/2016.
  */
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Point;
-import java.awt.Polygon;
-import java.awt.Rectangle;
-import java.awt.RenderingHints;
-import java.awt.Shape;
+import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.MouseInfo;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.Ellipse2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -34,7 +29,14 @@ import game.*;
 
 
     public class CatanBoard extends JPanel {
+        private BufferedImage image;
+        public void ImagePanel() {
+            try{
+                image = ImageIO.read(new File("/images/ore.png"));
+            } catch(IOException ex){
 
+            }
+        }
         private int state = 0;
         //0 = none
         //1 = choosing tile
@@ -266,7 +268,10 @@ import game.*;
             return state;
         }
 
+
+
         public void labelPorts(Graphics2D g2) {
+            /*
             Graphics2D g2c = (Graphics2D) g2.create();
 
             //Sheep 2:1
@@ -376,7 +381,7 @@ import game.*;
             g2c.setColor(Color.BLACK);
             g2c.drawString("General 3:1",0, 0);
             g2c = (Graphics2D) g2.create();
-
+          */
         }
 
         public Polygon makeHex(Point center) {
@@ -418,6 +423,7 @@ import game.*;
                     break;
                 case "ORE":
                     g2.setColor(Color.LIGHT_GRAY);
+
                     break;
                 default:
                     g2.setColor(Color.WHITE);
