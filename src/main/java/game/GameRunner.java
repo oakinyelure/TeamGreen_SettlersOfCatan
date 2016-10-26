@@ -10,6 +10,8 @@ import javax.swing.SwingUtilities;
 import board.DevCard;
 import gui.PlayerRegistration;
 
+import static java.awt.Color.LIGHT_GRAY;
+
 /**
  * Created by Olusegun on 9/27/2016.
  * This is the entry point of the Game.
@@ -25,9 +27,9 @@ public class GameRunner {
 
     public static void main(String[] args) {
         players.add(new Player(names.get(0),Color.RED));
-        players.add(new Player(names.get(1),/*(String)names.userNames.get(1),*/Color.LIGHT_GRAY));
-        players.add(new Player(names.get(2),/*(String)names.userNames.get(2),*/Color.GREEN));
-        players.add(new Player(names.get(3),/*String)names.userNames.get(3),*/Color.YELLOW));
+        players.add(new Player(names.get(1),LIGHT_GRAY));
+        players.add(new Player(names.get(2),Color.GREEN));
+        players.add(new Player(names.get(3),Color.YELLOW));
 
         numberPlayers = players.size();
 

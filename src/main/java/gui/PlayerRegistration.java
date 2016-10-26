@@ -103,6 +103,7 @@ public class PlayerRegistration extends Application {
 
                 GameRunner.names = userNames;
                 GameRunner.main(null);
+                primaryStage.close();
 
                 System.out.print(userNames.size());
 
