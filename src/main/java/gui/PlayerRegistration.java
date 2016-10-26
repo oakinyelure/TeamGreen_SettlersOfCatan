@@ -31,7 +31,6 @@ public class PlayerRegistration extends Application {
     ArrayList<Node> imageViews = new ArrayList<Node>();
     List<Node> label = new ArrayList<Node>();
     List<TextField> inputFields = new ArrayList<>();
-    List<String>  imgFilesObject= new ArrayList<>();
     Button submitButton;
     public final int numOfPlayer = 3;
 
@@ -97,10 +96,13 @@ public class PlayerRegistration extends Application {
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                userNames.add(inputFields.get(0));
-                userNames.add(inputFields.get(1));
-                userNames.add(inputFields.get(2));
-                userNames.add(inputFields.get(3));
+                userNames.add(inputFields.get(0).getText());
+                userNames.add(inputFields.get(1).getText());
+                userNames.add(inputFields.get(2).getText());
+                userNames.add(inputFields.get(3).getText());
+
+                GameRunner.names = userNames;
+                GameRunner.main(null);
 
                 System.out.print(userNames.size());
 

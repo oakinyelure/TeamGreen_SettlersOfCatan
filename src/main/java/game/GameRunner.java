@@ -24,10 +24,10 @@ public class GameRunner {
     public static ArrayList<String> names;
 
     public static void main(String[] args) {
-        players.add(new Player("A",Color.RED));
-        players.add(new Player("B",/*(String)names.userNames.get(1),*/Color.LIGHT_GRAY));
-        players.add(new Player("C",/*(String)names.userNames.get(2),*/Color.GREEN));
-        players.add(new Player("D",/*String)names.userNames.get(3),*/Color.YELLOW));
+        players.add(new Player(names.get(0),Color.RED));
+        players.add(new Player(names.get(1),/*(String)names.userNames.get(1),*/Color.LIGHT_GRAY));
+        players.add(new Player(names.get(2),/*(String)names.userNames.get(2),*/Color.GREEN));
+        players.add(new Player(names.get(3),/*String)names.userNames.get(3),*/Color.YELLOW));
 
         numberPlayers = players.size();
 

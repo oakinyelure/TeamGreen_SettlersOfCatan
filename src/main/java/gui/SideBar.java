@@ -81,7 +81,7 @@ public class SideBar extends JPanel{
         currentPlayerBox.getComponent().setForeground(Color.BLUE);
         setCurrentPlayer(GameRunner.getCurrentPlayer());
         add(currentPlayerBox.getComponent(), currentPlayerBox.getRectangle());
-        
+
         // Roll panel:
         //-------------------------------------------------------------------
 

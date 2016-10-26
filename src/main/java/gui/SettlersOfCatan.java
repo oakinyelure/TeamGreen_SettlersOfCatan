@@ -23,6 +23,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 public class SettlersOfCatan extends Application {
+    private PlayerRegistration stage;
 
     public static void main(String[] args) {
         launch(args);
@@ -56,6 +57,11 @@ public class SettlersOfCatan extends Application {
         Button exitButton = new Button("Exit Game");
         exitButton.setPrefSize(200,100);
         exitButton.setStyle("-fx-background-color: #E5785B");
+        startButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {;
+            }
+        });
 
         //startButton.setStyle("-fx-padding : 10");
         vBox.getChildren().addAll(startButton, exitButton);
