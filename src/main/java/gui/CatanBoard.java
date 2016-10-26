@@ -29,14 +29,7 @@ import game.*;
 
 
     public class CatanBoard extends JPanel {
-        private BufferedImage image;
-        public void ImagePanel() {
-            try{
-                image = ImageIO.read(new File("/images/ore.png"));
-            } catch(IOException ex){
 
-            }
-        }
         private int state = 0;
         //0 = none
         //1 = choosing tile
@@ -87,7 +80,7 @@ import game.*;
 //		game.getBoard().placeRoad(new EdgeLocation(3,3,2), players.get(0));
 //		structures[4][2][1].setType(1);
 
-            setBackground(new Color(164,200,218)); //TODO add background
+            setBackground(new Color(53,148,234)); //TODO add background
 
 //		boardHeight = getHeight();
 //		hexagonSide = (boardHeight - 2 * heightMargin) / 8;
@@ -120,7 +113,10 @@ import game.*;
             //addMouseMotionListener((MouseMotionListener) m);
         }
 
+
+
         public void paintComponent(Graphics g) {
+
 
             boardHeight = getHeight();
             hexagonSide = (boardHeight - 2 * heightMargin) / 8;
@@ -1352,5 +1348,6 @@ import game.*;
             state = 5;
             capitol = true;
         }
+
     }
 

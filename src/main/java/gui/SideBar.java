@@ -78,10 +78,10 @@ public class SideBar extends JPanel{
 
         currentPlayerBox = new KComponent(new JLabel(""), new Rectangle(2,0,10,1));
         currentPlayerBox.getComponent().setFont(font);
-        currentPlayerBox.getComponent().setForeground(Color.WHITE);
+        currentPlayerBox.getComponent().setForeground(Color.BLUE);
         setCurrentPlayer(GameRunner.getCurrentPlayer());
         add(currentPlayerBox.getComponent(), currentPlayerBox.getRectangle());
-
+        
         // Roll panel:
         //-------------------------------------------------------------------
 
@@ -101,7 +101,7 @@ public class SideBar extends JPanel{
                     mainPanel();
                 }
                 else {
-
+                //trading takes place here
                     if (GameRunner.getNumbPlayers() == 3) {
                         int remove = 0;
                         if (GameRunner.getPlayer(0).getTotalResources() > 7)
@@ -242,8 +242,9 @@ public class SideBar extends JPanel{
                 validate();
             }
         });
-        roll.setText("roll the dice");
+        roll.setText("Roll Dice");
         rollPanel.add(new KComponent(roll, new Rectangle(3,5,8,3)));
+
 
         // Main panel:
         //-------------------------------------------------------------------

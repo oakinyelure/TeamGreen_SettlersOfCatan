@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import javax.swing.SwingUtilities;
 
 import board.DevCard;
+import gui.PlayerRegistration;
+
 /**
  * Created by Olusegun on 9/27/2016.
  * This is the entry point of the Game.
@@ -19,13 +21,13 @@ public class GameRunner {
     private static ArrayList<Player> players = new ArrayList<Player>();
     private static Game game;
     private static Player winner;
+    public static ArrayList<String> names;
 
     public static void main(String[] args) {
-
-        players.add(new Player("oakinyelure",	Color.ORANGE));
-        players.add(new Player("snickel",	Color.BLACK));
-        players.add(new Player("askeens",	Color.RED));
-        players.add(new Player("oalewi",	Color.BLUE));
+        players.add(new Player("A",Color.RED));
+        players.add(new Player("B",/*(String)names.userNames.get(1),*/Color.LIGHT_GRAY));
+        players.add(new Player("C",/*(String)names.userNames.get(2),*/Color.GREEN));
+        players.add(new Player("D",/*String)names.userNames.get(3),*/Color.YELLOW));
 
         numberPlayers = players.size();
 
@@ -36,6 +38,7 @@ public class GameRunner {
             }
         });
     }
+
 
     public static Player getCurrentPlayer() {
         return currentPlayer;

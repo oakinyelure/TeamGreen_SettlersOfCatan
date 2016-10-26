@@ -2,7 +2,9 @@ package gui;/**
  * Created by Olusegun on 10/10/2016.
  */
 
+import game.GameRunner;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
@@ -13,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextFieldBuilder;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -23,7 +26,7 @@ import java.util.List;
 
 public class PlayerRegistration extends Application {
     String[] imgFiles = {"/images/redknight.png","/images/blueknight.png","/images/greenknight.png","/images/yellowknight.png"};
-    ArrayList userNames = new ArrayList();
+    public ArrayList userNames = new ArrayList<>();
     Collection <String> images = new ArrayList<>();
     ArrayList<Node> imageViews = new ArrayList<Node>();
     List<Node> label = new ArrayList<Node>();
@@ -39,6 +42,7 @@ public class PlayerRegistration extends Application {
         launch(args);
 
     }
+
 
     @Override
     public void start(Stage primaryStage) {
@@ -90,6 +94,18 @@ public class PlayerRegistration extends Application {
         bPane.setBottom(footer);
 
         footer.getChildren().add(submitButton);
+        submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                userNames.add(inputFields.get(0));
+                userNames.add(inputFields.get(1));
+                userNames.add(inputFields.get(2));
+                userNames.add(inputFields.get(3));
+
+                System.out.print(userNames.size());
+
+            }
+        });
 
 
 
