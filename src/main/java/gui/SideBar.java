@@ -882,7 +882,7 @@ public class SideBar extends JPanel{
                     if (count == 1) {
                         //Place capitol commandblock
                         display.getBoard().placeCapitol();
-                        placePanel("Place your capitol...");
+                        placePanel("Place your second settlement...");
                         timer = new Timer(INTERVAL,
                                 new ActionListener() {
                                     public void actionPerformed(ActionEvent evt) {
@@ -920,6 +920,7 @@ public class SideBar extends JPanel{
                         count--;
                         //Place capitol commandblock
                         display.getBoard().placeCapitol();
+                        //lOGIC ERROR MUST BE CORRECTED HERE
                         placePanel("Place your second settlement");
                         timer = new Timer(INTERVAL,
                                 new ActionListener() {
@@ -930,8 +931,9 @@ public class SideBar extends JPanel{
                                         else {
                                             timer.stop();
                                             //Place Road commandblock
-                                            display.getBoard().placeRoad(1);
+
                                             placePanel("Place a road...");
+                                            display.getBoard().placeRoad(1);
                                             timer = new Timer(INTERVAL,
                                                     new ActionListener() {
                                                         public void actionPerformed(ActionEvent evt) {
@@ -942,7 +944,7 @@ public class SideBar extends JPanel{
                                                                 timer.stop();
                                                                 GameRunner.prevPlayer();
                                                                 setCurrentPlayer(GameRunner.getCurrentPlayer());
-                                                                start.setText("Place your capitol, " + GameRunner.getCurrentPlayer());
+                                                                start.setText("Place your second settlement, " + GameRunner.getCurrentPlayer());
                                                                 setupPanel();
                                                             }
                                                         }
@@ -1290,7 +1292,8 @@ public class SideBar extends JPanel{
         this.removeAll();
 
         JLabel win = new JLabel(GameRunner.getWinner().getName() + " wins!");
-        win.setFont(new Font("Arial", 1, 24));
+        win.setFont(new Font("Arial", 1, 30));
+        win.setBackground(Color.GREEN);
         this.add(win, new Rectangle(2,4,10,5));
     }
 }
