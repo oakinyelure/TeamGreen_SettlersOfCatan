@@ -61,6 +61,7 @@ public class SideBar extends JPanel{
     private KComponent currentPlayerBox;
     private final GameWindow display;
     private final Font font = new Font("Arial", 1, 16);
+    private final Font priorityFont = new Font("Verdana", 6 ,28);
     private int flag = 0;
     // For tracking where we are in turn; 0 = main panel or roll, 1 = trade panel, 2 = buy panel, 3 = dev card panel
 
@@ -163,6 +164,8 @@ public class SideBar extends JPanel{
                     }
                     else {
                         //System.out.println("3");
+                        //Decision about resources removal is being made here. TODO Will refactor this so that it will only pop out the concerned players.
+                        //Decision is to check the value of player resources first before popping out.
                         int remove = 0;
                         if (GameRunner.getPlayer(0).getTotalResources() > 7)
                             remove = GameRunner.getPlayer(0).getTotalResources() / 2;
@@ -237,14 +240,18 @@ public class SideBar extends JPanel{
                 }
 
                 JLabel rollNumb = new JLabel("Roll value: " + roll);
-                rollNumb.setFont(font);
+                rollNumb.setFont(priorityFont);
                 add(rollNumb, new Rectangle(2,2,10,1));
                 repaint();
                 validate();
             }
         });
+
+        //DIce design here
         roll.setText("Roll Dice");
         rollPanel.add(new KComponent(roll, new Rectangle(3,5,8,3)));
+        roll.setBackground(Color.YELLOW);
+        roll.setFont(priorityFont);
 
 
         // Main panel:
@@ -255,7 +262,7 @@ public class SideBar extends JPanel{
                 buyPanel();
             }
         });
-        buy.setText("buy");
+        buy.setText("Buy from Bank");
         mainPanel.add(new KComponent(buy, new Rectangle(3,5,8,3)));
 
         JButton trade = new JButton(new AbstractAction() {
@@ -263,7 +270,7 @@ public class SideBar extends JPanel{
                 tradePanel();
             }
         });
-        trade.setText("trade");
+        trade.setText("Trade with another player");
         mainPanel.add(new KComponent(trade, new Rectangle(3,9,8,3)));
 
         JButton dev = new JButton(new AbstractAction() {
@@ -315,7 +322,8 @@ public class SideBar extends JPanel{
                 rollPanel();
             }
         });
-        endTurn.setText("end your turn");
+        endTurn.setText("End your turn");
+        endTurn.setBackground(Color.CYAN.RED);
         mainPanel.add(new KComponent(endTurn, new Rectangle (3,18,8,3)));
 
         // Trade panel:
@@ -405,7 +413,7 @@ public class SideBar extends JPanel{
                     timer.start();
                 }
                 else if (bought == 1) {
-                    errorPanel("Insufficient resources!");
+                    errorPanel(" You have Insufficient resources!");
                 }
                 else if (bought == 2) {
                     errorPanel("Structure capacity reached!");
@@ -912,7 +920,7 @@ public class SideBar extends JPanel{
                         count--;
                         //Place capitol commandblock
                         display.getBoard().placeCapitol();
-                        placePanel("Place your capitol...");
+                        placePanel("Place your second settlement");
                         timer = new Timer(INTERVAL,
                                 new ActionListener() {
                                     public void actionPerformed(ActionEvent evt) {
