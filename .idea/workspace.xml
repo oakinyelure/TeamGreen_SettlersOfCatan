@@ -28,7 +28,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="PlayerRegistration.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerRegistration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/gui/PlayerRegistration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="545">
@@ -135,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BottomBar.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BottomBar.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/gui/BottomBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="36" column="114" selection-start-line="36" selection-start-column="114" selection-end-line="36" selection-end-column="114" />
+            <state relative-caret-position="1825">
+              <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -483,12 +483,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/stylesheet/catanstylesheet.css" />
         <option value="$PROJECT_DIR$/src/main/java/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/Player.java" />
-        <option value="$PROJECT_DIR$/src/main/java/gui/BottomBar.java" />
         <option value="$PROJECT_DIR$/src/main/java/gui/CatanBoard.java" />
         <option value="$PROJECT_DIR$/src/main/java/gui/SideBar.java" />
         <option value="$PROJECT_DIR$/src/main/java/gui/SettlersOfCatan.java" />
         <option value="$PROJECT_DIR$/src/main/java/game/GameRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/gui/PlayerRegistration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/gui/BottomBar.java" />
       </list>
     </option>
   </component>
@@ -1589,22 +1589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/gui/BottomBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="36" column="114" selection-start-line="36" selection-start-column="114" selection-end-line="36" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/game/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-488">
-          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/gui/SideBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1643">
@@ -1667,6 +1651,22 @@
             <element signature="e#1049#1055#0" expanded="true" />
             <element signature="e#1095#1101#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/game/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-488">
+          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/gui/BottomBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1825">
+          <caret line="89" column="8" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>

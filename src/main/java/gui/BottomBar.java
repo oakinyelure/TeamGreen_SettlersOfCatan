@@ -87,7 +87,7 @@ public class BottomBar extends JPanel{
         ((JLabel)components.get(8).getComponent()).setText("Monopoly: " + p.getDevCardsType("Monopoly"));
         ((JLabel)components.get(9).getComponent()).setText("Year of plenty: " + p.getDevCardsType("Year of plenty"));
         ((JLabel)components.get(10).getComponent()).setText("Road building: " + p.getDevCardsType("Road building"));
-        ((JLabel)components.get(11).getComponent()).setText("Victory Point: " + p.getDevCardsType("Victory Point"));
+        //((JLabel)components.get(11).getComponent()).setText("Victory Point: " + p.getDevCardsType("Victory Point"));
     }
 
 
