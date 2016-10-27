@@ -51,7 +51,7 @@ public class GameWindow {
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         Dimension d = new Dimension(5,6);
 
-        frame.setSize(SCRSIZE + 500, SCRSIZE);
+        frame.setSize(SCRSIZE + 600, SCRSIZE);
         //frame.setLayout(new GraphPaperLayout(d));
         Container content = frame.getContentPane();
         content.setLayout(new GraphPaperLayout(d));

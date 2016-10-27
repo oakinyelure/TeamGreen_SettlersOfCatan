@@ -72,6 +72,7 @@ public class SideBar extends JPanel{
 
         this.display = display;
         this.setLayout(new GraphPaperLayout(new Dimension(14,24)));
+        this.setBackground(Color.CYAN);
 
         // Current player title (always in sidebar)
         //-------------------------------------------------------------------
