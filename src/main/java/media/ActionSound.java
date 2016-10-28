@@ -1,5 +1,6 @@
 package media;
 
+import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import javax.swing.*;
@@ -8,49 +9,35 @@ import javax.swing.*;
  * Created by Olusegun on 10/27/2016.
  */
 public class ActionSound  {
-    private MediaPlayer roadBuild;
-    private MediaPlayer settlementSound;
-    private MediaPlayer registrationScreenImage;
-    private MediaPlayer gameScreenImage;
+    private MediaPlayer roadBuild = new MediaPlayer(new Media(""));
+    private MediaPlayer settlementSound =  new MediaPlayer(new Media(""));
+    private MediaPlayer registrationScreen = new MediaPlayer(new Media(""));
+    private MediaPlayer gameScreen = new MediaPlayer(new Media(""));
 
     public ActionSound(){
 
     }
 
-    public ActionSound(MediaPlayer roadBuild, MediaPlayer settlementSound) {
+    public ActionSound(MediaPlayer roadBuild, MediaPlayer settlementSound, MediaPlayer registrationScreen, MediaPlayer gameScreen) {
         this.roadBuild = roadBuild;
         this.settlementSound = settlementSound;
+        this.registrationScreen = registrationScreen;
+        this.gameScreen = gameScreen;
     }
 
-    public MediaPlayer getRoadBuild() {
-        return roadBuild;
-    }
+   public MediaPlayer getRoadSound(){
+       return this.roadBuild;
+   }
 
-    public void setRoadBuild(MediaPlayer roadBuild) {
-        this.roadBuild = roadBuild;
-    }
+   public MediaPlayer getSettlementSound(){
+       return settlementSound;
+   }
 
-    public MediaPlayer getSettlementSound() {
-        return settlementSound;
-    }
+   public MediaPlayer getRegistrationSound(){
+       return registrationScreen;
+   }
 
-    public void setSettlementSound(MediaPlayer settlementSound) {
-        this.settlementSound = settlementSound;
-    }
-
-    public MediaPlayer getRegistrationScreenImage() {
-        return registrationScreenImage;
-    }
-
-    public void setRegistrationScreenImage(MediaPlayer registrationScreenImage) {
-        this.registrationScreenImage = registrationScreenImage;
-    }
-
-    public MediaPlayer getGameScreenImage() {
-        return gameScreenImage;
-    }
-
-    public void setGameScreenImage(MediaPlayer gameScreenImage) {
-        this.gameScreenImage = gameScreenImage;
-    }
+   public MediaPlayer getGameSound(){
+       return gameScreen;
+   }
 }
