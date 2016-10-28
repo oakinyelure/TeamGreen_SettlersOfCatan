@@ -16,6 +16,7 @@ public class Player {
     private HashMap<String, Integer> resources;
     private ArrayList<DevCard> hand;
     private ArrayList<Road> roads;
+    //Settlements, roads and victory points all have default 2 values. You can place 2 settlements, roads, and VP at startup
     private int numbKnights = 0;
     private int numbSettlements = 2;
     private int victoryPoints = 2;
