@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import lib.GraphPaperLayout;
+import media.ActionSound;
 
 
 /**
@@ -46,7 +47,6 @@ public class GameWindow {
     }
 
     private void createAndShowGUI() {
-
         JFrame frame = new JFrame("Catan");
         frame.setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
         Dimension d = new Dimension(5,6);
@@ -70,6 +70,8 @@ public class GameWindow {
         frame.setVisible(true);
 
         board.repaint();
+
+
     }
 
     public CatanBoard getBoard() {

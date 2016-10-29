@@ -41,7 +41,7 @@ public class PlayerRegistration extends Application {
 
 
     public static void main(String[] args) {
-        sound.getRegistrationSound().setAutoPlay(true);
+        sound.getRegistrationSound().play();
         launch(args);
 
     }

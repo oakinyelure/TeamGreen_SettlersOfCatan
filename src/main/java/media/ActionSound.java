@@ -12,9 +12,9 @@ import java.net.URL;
 public class ActionSound  {
     final URL resource = getClass().getResource("settlement.mp3");
     private MediaPlayer roadBuild = new MediaPlayer(new Media("http://cs.armstrong.edu/liang/common/sample.mp4"));
-    private MediaPlayer settlementSound =  new MediaPlayer(new Media("http://cs.armstrong.edu/liang/common/sample.mp4"));
-    private MediaPlayer registrationScreen = new MediaPlayer(new Media("http://download.oracle.com/otndocs/products/javafx/oow2010-2.flv"));
-    private MediaPlayer gameScreen = new MediaPlayer(new Media("http://cs.armstrong.edu/liang/common/sample.mp4"));
+    private MediaPlayer settlementSound =  new MediaPlayer(new Media("http://soundimage.org/wp-content/uploads/2016/04/UI_Quirky16.mp3"));
+    private MediaPlayer registrationScreen = new MediaPlayer(new Media("http://www.downloadfreesound.com/wp-content/uploads/2013/07/Battle_Pirate_Theme_Music_1.mp3"));
+    private MediaPlayer gameScreen = new MediaPlayer(new Media("http://www.downloadfreesound.com/wp-content/uploads/2013/07/War_Jungle_Theme_Music_1.mp3"));
 
 
 
@@ -30,20 +30,25 @@ public class ActionSound  {
     }
 
    public MediaPlayer getRoadSound(){
-       //roadBuild.setAutoPlay(true);
+       roadBuild.setAutoPlay(true);
        roadBuild.setCycleCount(MediaPlayer.INDEFINITE);
-       return this.roadBuild;
+       return roadBuild;
    }
 
    public MediaPlayer getSettlementSound(){
+       settlementSound.setAutoPlay(true);
        return settlementSound;
    }
 
    public MediaPlayer getRegistrationSound(){
+       registrationScreen.setAutoPlay(true);
+       registrationScreen.setCycleCount(MediaPlayer.INDEFINITE);
        return registrationScreen;
    }
 
    public MediaPlayer getGameSound(){
+       gameScreen.setAutoPlay(true);
+       gameScreen.setCycleCount(MediaPlayer.INDEFINITE);
        return gameScreen;
    }
 }

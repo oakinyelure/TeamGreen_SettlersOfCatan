@@ -19,13 +19,13 @@ public class Board {
     private VertexLocation startside;
 
 
+
     /**
      * Constructor for Board, creates the hexagonal grid for the tiles, with arbitrary third axis for structures and roads.
      * Tiles randomly placed, and assigned numbers according to the Settlers of Catan rulebook, going in a spiral fashion and skipping the desert.
      * Settlements and Roads are placed at every vertex and edge, respectively, with unassigned players.
      */
     public Board() {
-
         tiles = new Tile[7][7];
         structures = new Structure[7][7][2];
         roads = new Road[7][7][3];

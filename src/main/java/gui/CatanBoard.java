@@ -26,9 +26,13 @@ import javax.swing.SwingUtilities;
 
 import board.*;
 import game.*;
+import javafx.scene.image.*;
+import javafx.scene.image.Image;
+import javafx.scene.layout.BackgroundImage;
+import media.ActionSound;
 
 
-    public class CatanBoard extends JPanel {
+public class CatanBoard extends JPanel {
 
         private int state = 0;
         //0 = none
@@ -55,6 +59,7 @@ import game.*;
 
         private int index;
         private boolean capitol = false;
+        private ActionSound sound = new ActionSound();
 
 
 
@@ -81,6 +86,7 @@ import game.*;
 //		structures[4][2][1].setType(1);
 
             setBackground(new Color(53,148,234)); //TODO add background
+
 
 //		boardHeight = getHeight();
 //		hexagonSide = (boardHeight - 2 * heightMargin) / 8;
