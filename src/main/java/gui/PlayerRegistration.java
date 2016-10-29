@@ -1,4 +1,5 @@
-package gui;/**
+package gui;
+/**
  * Created by Olusegun on 10/10/2016.
  */
 
@@ -7,6 +8,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -18,6 +20,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import media.ActionSound;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -31,13 +34,14 @@ public class PlayerRegistration extends Application {
     ArrayList<Node> imageViews = new ArrayList<Node>();
     List<Node> label = new ArrayList<Node>();
     List<TextField> inputFields = new ArrayList<>();
+    private static ActionSound sound = new ActionSound();
     Button submitButton;
     public final int numOfPlayer = 3;
 
 
 
     public static void main(String[] args) {
-
+        sound.getRegistrationSound().setAutoPlay(true);
         launch(args);
 
     }
@@ -45,15 +49,17 @@ public class PlayerRegistration extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+
         int playerNum = 1;
         //looping through image view.
         for(int count = 0; count <= numOfPlayer; count++){
             imageViews.add(new ImageView(new Image(imgFiles[count])));
             label.add(new Label("Player" + "name"));
             inputFields.add(new TextField());
-            inputFields.get(count).setPromptText("Enter Player " + playerNum++ + "name");
+            inputFields.get(count).setPromptText("Enter Player " + playerNum++ + " name");
 
         }
+
         Pane root = new Pane();
         BorderPane bPane = new BorderPane();
         HBox header = new HBox(12);
@@ -61,8 +67,7 @@ public class PlayerRegistration extends Application {
         GridPane content = new GridPane();
 
         Button submitButton = new Button("Start Game");
-
-        submitButton.requestFocus();
+        submitButton.setCursor(Cursor.HAND);
 
 
         header.setPrefHeight(220.0);
@@ -96,7 +101,8 @@ public class PlayerRegistration extends Application {
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                userNames.add(inputFields.get(0).getText());
+
+               userNames.add(inputFields.get(0).getText());
                 userNames.add(inputFields.get(1).getText());
                 userNames.add(inputFields.get(2).getText());
                 userNames.add(inputFields.get(3).getText());
@@ -104,8 +110,6 @@ public class PlayerRegistration extends Application {
                 GameRunner.names = userNames;
                 GameRunner.main(null);
                 primaryStage.close();
-
-                System.out.print(userNames.size());
 
             }
         });
@@ -123,7 +127,6 @@ public class PlayerRegistration extends Application {
 
 
         root.getChildren().add(bPane);
-
 
         Scene scene = new Scene(root, 850,650);
         scene.getStylesheets().add("/stylesheet/catanstylesheet.css");
