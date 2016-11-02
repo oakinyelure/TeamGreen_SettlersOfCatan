@@ -6,7 +6,6 @@ package gui;
 import game.GameRunner;
 import javafx.application.Application;
 import javafx.event.EventHandler;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
@@ -14,15 +13,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFieldBuilder;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import media.ActionSound;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -102,7 +98,7 @@ public class PlayerRegistration extends Application {
             @Override
             public void handle(MouseEvent event) {
 
-               userNames.add(inputFields.get(0).getText());
+                userNames.add(inputFields.get(0).getText());
                 userNames.add(inputFields.get(1).getText());
                 userNames.add(inputFields.get(2).getText());
                 userNames.add(inputFields.get(3).getText());

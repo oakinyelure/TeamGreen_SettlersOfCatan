@@ -27,7 +27,6 @@ public class GameRunner {
     public static ArrayList<String> names;
 
     public static void main(String[] args) {
-
         players.add(new Player(names.get(0),Color.RED));
         players.add(new Player(names.get(1),LIGHT_GRAY));
         players.add(new Player(names.get(2),Color.GREEN));
