@@ -61,7 +61,7 @@ public class SideBar extends JPanel{
     private KComponent currentPlayerBox;
     private final GameWindow display;
     private final Font font = new Font("Arial", 1, 16);
-    private final Font priorityFont = new Font("Verdana", 6 ,28);
+    private final Font priorityFont = new Font("Verdana", 6 ,16);
     private int flag = 0;
     // For tracking where we are in turn; 0 = main panel or roll, 1 = trade panel, 2 = buy panel, 3 = dev card panel
 

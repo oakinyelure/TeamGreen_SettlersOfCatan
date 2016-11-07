@@ -10,6 +10,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -102,7 +103,7 @@ public class PlayerRegistration extends Application {
                 userNames.add(inputFields.get(1).getText());
                 userNames.add(inputFields.get(2).getText());
                 userNames.add(inputFields.get(3).getText());
-
+            //todo VALIDATE PLAYER NAME(8 CONSTRAINTS AND RETURN FALSE IF VALUE IS NULL
                 GameRunner.names = userNames;
                 GameRunner.main(null);
                 primaryStage.close();
