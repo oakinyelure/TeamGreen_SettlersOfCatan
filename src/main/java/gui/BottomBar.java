@@ -5,7 +5,6 @@ import game.Player;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -28,14 +27,16 @@ public class BottomBar extends JPanel{
     private Timer timer;
 
     public BottomBar() {
-        setBackground(Color.BLACK);
+        setBackground(Color.ORANGE);
 
         setLayout(new GraphPaperLayout(new Dimension(GameRunner.getNumbPlayers(),12)));
 
-        for (int i = 0; i < GameRunner.getNumbPlayers(); i++) {
+        //TO DO. Implement for one player at a time
+        for (int i = 0; i < GameRunner.getNumbPlayers() ; i++) {
             ArrayList<KComponent> components = new ArrayList<KComponent>();
             components.add(new KComponent(new JLabel(GameRunner.getPlayer(i).getName()), new Rectangle(i,0,1,1)));
             add(components.get(0).getComponent(), components.get(0).getRectangle());
+
 
             for (int k = 1; k <= 11; k++) {
                 components.add(new KComponent(new JLabel(""), new Rectangle(i,k,1,1)));
