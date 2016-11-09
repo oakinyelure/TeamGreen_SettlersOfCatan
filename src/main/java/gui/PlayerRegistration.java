@@ -10,6 +10,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -33,12 +34,21 @@ public class PlayerRegistration extends Application {
     private static ActionSound sound = new ActionSound();
     Button submitButton;
     public final int numOfPlayer = 3;
-
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
 
     public static void main(String[] args) {
         sound.getRegistrationSound().play();
         launch(args);
+
+    }
+
+    public void validatePlayerData(TextField field, boolean status){
+
+        if(field.getText().isEmpty()){
+            status = false;
+
+        }
 
     }
 
@@ -95,17 +105,25 @@ public class PlayerRegistration extends Application {
 
         footer.getChildren().add(submitButton);
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            boolean flag;
             @Override
             public void handle(MouseEvent event) {
+                validatePlayerData(inputFields.get(0), flag);
+                if(flag == false){
+                    alert.setHeaderText(null);
+                    alert.setContentText(inputFields.get(0).getPromptText());
+                    alert.showAndWait();
+                }
+                else {
+                    userNames.add(inputFields.get(0).getText());
+                    userNames.add(inputFields.get(1).getText());
+                    userNames.add(inputFields.get(2).getText());
+                    userNames.add(inputFields.get(3).getText());
 
-                userNames.add(inputFields.get(0).getText());
-                userNames.add(inputFields.get(1).getText());
-                userNames.add(inputFields.get(2).getText());
-                userNames.add(inputFields.get(3).getText());
-
-                GameRunner.names = userNames;
-                GameRunner.main(null);
-                primaryStage.close();
+                    GameRunner.names = userNames;
+                    GameRunner.main(null);
+                    primaryStage.close();
+                }
 
             }
         });
