@@ -45,8 +45,11 @@ public class PlayerRegistration extends Application {
     
 //// TODO: 11/9/2016  
     public Alert validatePlayerData(){
-        if(inputFields.get(int).getText.isEmpty()){
-          alert.setContentText(inputFields.get(int).getPromptText());  
+        for(int count = 0; count <= numOfPlayer; count++){
+            
+        if(inputFields.get(count).getText.isEmpty()){
+          alert.setContentText(inputFields.get(count).getPromptText());  
+            }
         }
         return alert;
 
@@ -108,14 +111,14 @@ public class PlayerRegistration extends Application {
 
             @Override
             public void handle(MouseEvent event) {
-                    
-                inputFields.get(0).validatePlayerData();
-                    userNames.add(inputFields.get(0).getText());
-                    userNames.add(inputFields.get(1).getText());
+                    for (int k = 0; k <= numOfPlayer; k++){
+                        
+                    userNames.add(inputFields.get(k).getText());
+                   /* userNames.add(inputFields.get(1).getText());
                     userNames.add(inputFields.get(2).getText());
                     userNames.add(inputFields.get(3).getText());
 
-
+                            */
                     GameRunner.names = userNames;
                     GameRunner.main(null);
                     primaryStage.close();
