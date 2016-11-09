@@ -374,6 +374,8 @@ public class Game {
      * @param p the given Player
      * @return 0=success, 1=insufficient resources, 2=structure limit reached
      */
+    
+    //// TODO: 11/7/2016  REFACTOR CODE 
     public int buySettlement(Player p) {
 
         // Check Player has sufficient resources

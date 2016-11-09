@@ -108,6 +108,7 @@ public class PlayerRegistration extends Application {
             boolean flag;
             @Override
             public void handle(MouseEvent event) {
+<<<<<<< HEAD
                 validatePlayerData(inputFields.get(0), flag);
                 if(flag == false){
                     alert.setHeaderText(null);
@@ -124,6 +125,17 @@ public class PlayerRegistration extends Application {
                     GameRunner.main(null);
                     primaryStage.close();
                 }
+=======
+
+                userNames.add(inputFields.get(0).getText());
+                userNames.add(inputFields.get(1).getText());
+                userNames.add(inputFields.get(2).getText());
+                userNames.add(inputFields.get(3).getText());
+            //todo VALIDATE PLAYER NAME(8 CONSTRAINTS AND RETURN FALSE IF VALUE IS NULL
+                GameRunner.names = userNames;
+                GameRunner.main(null);
+                primaryStage.close();
+>>>>>>> origin/master
 
             }
         });
