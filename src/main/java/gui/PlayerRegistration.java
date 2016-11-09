@@ -42,14 +42,13 @@ public class PlayerRegistration extends Application {
         launch(args);
 
     }
-
-    public void validatePlayerData(TextField field, boolean status){
+    
+//// TODO: 11/9/2016  
+    public void validatePlayerData(TextField field){
 
         if(field.getText().isEmpty()){
-            status = false;
-        }
-        else{
-            status = true;
+            alert.setTitle("Error");
+            alert.setContentText(field.getPromptText());
         }
 
     }
@@ -107,26 +106,19 @@ public class PlayerRegistration extends Application {
 
         footer.getChildren().add(submitButton);
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            boolean flag;
+
             @Override
             public void handle(MouseEvent event) {
 
-                validatePlayerData(inputFields.get(0), flag);
-                if(flag == false){
-                    alert.setHeaderText(null);
-                    alert.setContentText(inputFields.get(0).getPromptText());
-                    alert.showAndWait();
-                }
-                else {
                     userNames.add(inputFields.get(0).getText());
                     userNames.add(inputFields.get(1).getText());
                     userNames.add(inputFields.get(2).getText());
                     userNames.add(inputFields.get(3).getText());
 
+
                     GameRunner.names = userNames;
                     GameRunner.main(null);
                     primaryStage.close();
-                }
 
             }
         });
