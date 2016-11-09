@@ -79,10 +79,15 @@ public class BottomBar extends JPanel{
 
     public void updatePlayer(ArrayList<KComponent> components, Player p){
         ((JLabel)components.get(1).getComponent()).setText("Brick: " + p.getNumberResourcesType("BRICK"));
+	((JLabel)components.get(1).getComponent()).setForeground(Color.decode("#943126"));
         ((JLabel)components.get(2).getComponent()).setText("Wool: " + p.getNumberResourcesType("WOOL"));
+	((JLabel)components.get(2).getComponent()).setForeground(Color.GREEN);
         ((JLabel)components.get(3).getComponent()).setText("Ore: " + p.getNumberResourcesType("ORE"));
+	((JLabel)components.get(3).getComponent()).setForeground(Color.decode("#B3B6B7"));
         ((JLabel)components.get(4).getComponent()).setText("Grain: " + p.getNumberResourcesType("GRAIN"));
+	((JLabel)components.get(3).getComponent()).setForeground(Color.decode("#B3B6B7"));
         ((JLabel)components.get(5).getComponent()).setText("Lumber: " + p.getNumberResourcesType("LUMBER"));
+	((JLabel)components.get(5).getComponent()).setForeground(Color.decode("#7E5109"));
         ((JLabel)components.get(6).getComponent()).setText("VP: " + p.getVictoryPoints());
         ((JLabel)components.get(7).getComponent()).setText("Knight: " + p.getDevCardsType("Knight"));
         ((JLabel)components.get(8).getComponent()).setText("Monopoly: " + p.getDevCardsType("Monopoly"));
