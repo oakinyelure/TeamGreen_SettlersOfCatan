@@ -44,12 +44,11 @@ public class PlayerRegistration extends Application {
     }
     
 //// TODO: 11/9/2016  
-    public void validatePlayerData(TextField field){
-
-        if(field.getText().isEmpty()){
-            alert.setTitle("Error");
-            alert.setContentText(field.getPromptText());
+    public Alert validatePlayerData(){
+        if(inputFields.get(int).getText.isEmpty()){
+          alert.setContentText(inputFields.get(int).getPromptText());  
         }
+        return alert;
 
     }
 
@@ -109,7 +108,8 @@ public class PlayerRegistration extends Application {
 
             @Override
             public void handle(MouseEvent event) {
-
+                    
+                inputFields.get(0).validatePlayerData();
                     userNames.add(inputFields.get(0).getText());
                     userNames.add(inputFields.get(1).getText());
                     userNames.add(inputFields.get(2).getText());
