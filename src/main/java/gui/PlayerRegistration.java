@@ -4,6 +4,7 @@ package gui;
  */
 
 import game.GameRunner;
+import game.Player;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -18,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import media.ActionSound;
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ public class PlayerRegistration extends Application {
     private static ActionSound sound = new ActionSound();
     Button submitButton;
     public final int numOfPlayer = 3;
-    Alert alert = new Alert(Alert.AlertType.ERROR);
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
 
     public static void main(String[] args) {
@@ -42,18 +44,7 @@ public class PlayerRegistration extends Application {
         launch(args);
 
     }
-    
-//// TODO: 11/9/2016  
-    public Alert validatePlayerData(){
-        for(int count = 0; count <= numOfPlayer; count++){
-            
-        if(inputFields.get(count).getText.isEmpty()){
-          alert.setContentText(inputFields.get(count).getPromptText());  
-            }
-        }
-        return alert;
 
-    }
 
 
     @Override
@@ -111,14 +102,19 @@ public class PlayerRegistration extends Application {
 
             @Override
             public void handle(MouseEvent event) {
-                    for (int k = 0; k <= numOfPlayer; k++){
-                        
-                    userNames.add(inputFields.get(k).getText());
-                   /* userNames.add(inputFields.get(1).getText());
-                    userNames.add(inputFields.get(2).getText());
-                    userNames.add(inputFields.get(3).getText());
+                    for (int k = 0; k <= numOfPlayer; k++) {
+                        if(inputFields.get(k).getText().length() == 0){
+                            inputFields.get(k).setText("Player" + ++k);
+                            k--;
+                        }
+                        userNames.add(inputFields.get(k).getText());
+                    }
 
-                            */
+                alert.setTitle("Successful: Players created");
+                alert.setHeaderText("Registered Player Names");
+                alert.setContentText(inputFields.get(0).getText() + ", " + inputFields.get(1).getText() + ", " + inputFields.get(2).getText() + ", " + inputFields.get(3).getText());
+                alert.showAndWait();
+
                     GameRunner.names = userNames;
                     GameRunner.main(null);
                     primaryStage.close();
