@@ -68,6 +68,7 @@ public class PlayerRegistration extends Application {
 
         Button submitButton = new Button("Start Game");
         submitButton.setCursor(Cursor.HAND);
+        submitButton.getStyleClass().add("submitButton");
 
 
         header.setPrefHeight(220.0);
@@ -77,15 +78,7 @@ public class PlayerRegistration extends Application {
         root.setBackground(new Background(bImage));
 
 
-
-        //Add imageview, label and textfield to content.
-        /* TODO Instead of adding content to grid, it can be looped. Would figure out how to loop through the grid without affecting the behaviour of @param(i)
-        for(int i = 0; i <= numOfPlayer; i++) {
-            content.setConstraints(imageViews.get(i),i,i);
-            content.getChildren().add(imageViews.get(i));
-        }
-        */
-        content.getStyleClass().add("playersCOntainer");
+        content.getStyleClass().add("playersContainer");
         content.setHgap(18);
         content.setVgap(15);
         content.setPrefSize(600,400);
@@ -139,10 +132,12 @@ public class PlayerRegistration extends Application {
         Scene scene = new Scene(root, 850,650);
         scene.getStylesheets().add("/stylesheet/catanstylesheet.css");
 
+
         primaryStage.setScene(scene);
         primaryStage.setTitle("Player Registration");
         primaryStage.setResizable(false);
         primaryStage.show();
+        primaryStage.getIcons().add(new Image("/images/playerRegistration.jpg"));
     }
 
 }
