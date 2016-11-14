@@ -4,6 +4,7 @@ package gui;
  */
 
 import game.GameRunner;
+import game.Player;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -18,6 +19,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import media.ActionSound;
 import java.util.ArrayList;
@@ -34,7 +36,7 @@ public class PlayerRegistration extends Application {
     private static ActionSound sound = new ActionSound();
     Button submitButton;
     public final int numOfPlayer = 3;
-
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
 
     public static void main(String[] args) {
@@ -42,6 +44,7 @@ public class PlayerRegistration extends Application {
         launch(args);
 
     }
+
 
 
     @Override
@@ -65,6 +68,7 @@ public class PlayerRegistration extends Application {
 
         Button submitButton = new Button("Start Game");
         submitButton.setCursor(Cursor.HAND);
+        submitButton.getStyleClass().add("submitButton");
 
 
         header.setPrefHeight(220.0);
@@ -74,15 +78,7 @@ public class PlayerRegistration extends Application {
         root.setBackground(new Background(bImage));
 
 
-
-        //Add imageview, label and textfield to content.
-        /* TODO Instead of adding content to grid, it can be looped. Would figure out how to loop through the grid without affecting the behaviour of @param(i)
-        for(int i = 0; i <= numOfPlayer; i++) {
-            content.setConstraints(imageViews.get(i),i,i);
-            content.getChildren().add(imageViews.get(i));
-        }
-        */
-        content.getStyleClass().add("playersCOntainer");
+        content.getStyleClass().add("playersContainer");
         content.setHgap(18);
         content.setVgap(15);
         content.setPrefSize(600,400);
@@ -96,17 +92,25 @@ public class PlayerRegistration extends Application {
 
         footer.getChildren().add(submitButton);
         submitButton.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
             @Override
             public void handle(MouseEvent event) {
+                    for (int k = 0; k <= numOfPlayer; k++) {
+                        if(inputFields.get(k).getText().length() == 0){
+                            inputFields.get(k).setText("Player" + ++k);
+                            k--;
+                        }
+                        userNames.add(inputFields.get(k).getText());
+                    }
 
-                userNames.add(inputFields.get(0).getText());
-                userNames.add(inputFields.get(1).getText());
-                userNames.add(inputFields.get(2).getText());
-                userNames.add(inputFields.get(3).getText());
-            //todo VALIDATE PLAYER NAME(8 CONSTRAINTS AND RETURN FALSE IF VALUE IS NULL
-                GameRunner.names = userNames;
-                GameRunner.main(null);
-                primaryStage.close();
+                alert.setTitle("Successful: Players created");
+                alert.setHeaderText("Registered Player Names");
+                alert.setContentText(inputFields.get(0).getText() + ", " + inputFields.get(1).getText() + ", " + inputFields.get(2).getText() + ", " + inputFields.get(3).getText());
+                alert.showAndWait();
+
+                    GameRunner.names = userNames;
+                    GameRunner.main(null);
+                    primaryStage.close();
 
             }
         });
@@ -128,10 +132,12 @@ public class PlayerRegistration extends Application {
         Scene scene = new Scene(root, 850,650);
         scene.getStylesheets().add("/stylesheet/catanstylesheet.css");
 
+
         primaryStage.setScene(scene);
         primaryStage.setTitle("Player Registration");
         primaryStage.setResizable(false);
         primaryStage.show();
+        primaryStage.getIcons().add(new Image("/images/playerRegistration.jpg"));
     }
 
 }
