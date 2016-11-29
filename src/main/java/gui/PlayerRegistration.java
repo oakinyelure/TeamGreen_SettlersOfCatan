@@ -25,6 +25,9 @@ import media.ActionSound;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.io.File;
+import java.awt.Desktop;
+import java.io.IOException;
 
 public class PlayerRegistration extends Application {
     String[] imgFiles = {"/images/redknight.png","/images/blueknight.png","/images/greenknight.png","/images/yellowknight.png"};
@@ -70,6 +73,10 @@ public class PlayerRegistration extends Application {
         submitButton.setCursor(Cursor.HAND);
         submitButton.getStyleClass().add("submitButton");
 
+        Button instructions = new Button("Instructions");
+        instructions.setCursor(Cursor.HAND);
+        instructions.getStyleClass().add("instructions");
+
 
         header.setPrefHeight(220.0);
 
@@ -114,6 +121,23 @@ public class PlayerRegistration extends Application {
 
             }
         });
+
+        footer.getChildren().add(instructions);
+        instructions.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+            @Override
+            public void handle(MouseEvent event) {
+                if (Desktop.isDesktopSupported()) {
+                    try {
+                        File myFile = new File(getClass().getResource("/images/Catan_Rules.pdf").getFile());
+                        Desktop.getDesktop().open(myFile);
+                    } catch (IOException ex) {
+                        // no application registered for PDFs
+                    }
+                }
+            }
+                                       }
+        );
 
 
 
