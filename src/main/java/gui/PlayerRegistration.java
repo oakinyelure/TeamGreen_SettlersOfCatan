@@ -109,6 +109,7 @@ public class PlayerRegistration extends Application {
                         }
                         userNames.add(inputFields.get(k).getText());
                     }
+                sound.getRegistrationSound().stop();
 
                 alert.setTitle("Successful: Players created");
                 alert.setHeaderText("Registered Player Names");
@@ -117,6 +118,7 @@ public class PlayerRegistration extends Application {
 
                     GameRunner.names = userNames;
                     GameRunner.main(null);
+
                     primaryStage.close();
 
             }
