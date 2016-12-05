@@ -27,7 +27,7 @@ public class BottomBar extends JPanel{
     private Timer timer;
 
     public BottomBar() {
-        setBackground(Color.ORANGE);
+        setBackground(Color.WHITE);
 
         setLayout(new GraphPaperLayout(new Dimension(GameRunner.getNumbPlayers(),12)));
 
@@ -41,7 +41,7 @@ public class BottomBar extends JPanel{
             for (int k = 1; k <= 11; k++) {
                 components.add(new KComponent(new JLabel(""), new Rectangle(i,k,1,1)));
                 components.get(k).getComponent().setFont(new Font("Arial", 1, 20));
-                components.get(k).getComponent().setForeground(Color.WHITE);
+                components.get(k).getComponent().setForeground(Color.BLACK);
                 add(components.get(k).getComponent(), components.get(k).getRectangle());
             }
 
@@ -85,7 +85,7 @@ public class BottomBar extends JPanel{
         ((JLabel)components.get(3).getComponent()).setText("Ore: " + p.getNumberResourcesType("ORE"));
 	((JLabel)components.get(3).getComponent()).setForeground(Color.decode("#B3B6B7"));
         ((JLabel)components.get(4).getComponent()).setText("Grain: " + p.getNumberResourcesType("GRAIN"));
-	((JLabel)components.get(3).getComponent()).setForeground(Color.decode("#B3B6B7"));
+    ((JLabel)components.get(3).getComponent()).setForeground(Color.decode("#B3B6B7"));
         ((JLabel)components.get(5).getComponent()).setText("Lumber: " + p.getNumberResourcesType("LUMBER"));
 	((JLabel)components.get(5).getComponent()).setForeground(Color.decode("#7E5109"));
         ((JLabel)components.get(6).getComponent()).setText("VP: " + p.getVictoryPoints());
