@@ -25,6 +25,7 @@ public class GameRunner {
     private static Game game;
     private static Player winner;
     public static ArrayList<String> names;
+    public static ActionSound sound;
 
     public static void main(String[] args) {
         players.add(new Player(names.get(0),Color.RED));

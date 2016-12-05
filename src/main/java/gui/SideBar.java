@@ -118,7 +118,7 @@ public class SideBar extends JPanel{
                                             int remove = 0;
                                             if (GameRunner.getPlayer(1).getTotalResources() > 7)
                                                 remove = GameRunner.getPlayer(1).getTotalResources() / 2;
-                                            inputResourcesPanel(remove, GameRunner.getPlayer(1), "Remove " + remove + " resources", false);
+                                            inputResourcesPanel(remove, GameRunner.getPlayer(1),  "Remove " + remove + " resources", false);
                                             timer = new Timer(INTERVAL,
                                                     new ActionListener() {
                                                         public void actionPerformed(ActionEvent evt) {
@@ -128,7 +128,7 @@ public class SideBar extends JPanel{
                                                                 int remove = 0;
                                                                 if (GameRunner.getPlayer(2).getTotalResources() > 7)
                                                                     remove = GameRunner.getPlayer(2).getTotalResources() / 2;
-                                                                inputResourcesPanel(remove, GameRunner.getPlayer(2), "Remove " + remove + " resources", false);
+                                                                inputResourcesPanel(remove, GameRunner.getPlayer(2), "remove " + remove + " resources", false);
                                                                 timer = new Timer(INTERVAL,
                                                                         new ActionListener() {
                                                                             public void actionPerformed(ActionEvent evt) {
@@ -169,7 +169,7 @@ public class SideBar extends JPanel{
                         int remove = 0;
                         if (GameRunner.getPlayer(0).getTotalResources() > 7)
                             remove = GameRunner.getPlayer(0).getTotalResources() / 2;
-                        inputResourcesPanel(remove, GameRunner.getPlayer(0), "Remove " + remove + " resources", false);
+                        inputResourcesPanel(remove, GameRunner.getPlayer(0), "Click to remove " + remove + " resources", false);
                         timer = new Timer(INTERVAL,
                                 new ActionListener() {
                                     public void actionPerformed(ActionEvent evt) {
@@ -179,7 +179,7 @@ public class SideBar extends JPanel{
                                             int remove = 0;
                                             if (GameRunner.getPlayer(1).getTotalResources() > 7)
                                                 remove = GameRunner.getPlayer(1).getTotalResources() / 2;
-                                            inputResourcesPanel(remove, GameRunner.getPlayer(1), "Remove " + remove + " resources", false);
+                                            inputResourcesPanel(remove, GameRunner.getPlayer(1),"Click to remove " + remove + " resources", false);
                                             timer = new Timer(INTERVAL,
                                                     new ActionListener() {
                                                         public void actionPerformed(ActionEvent evt) {
@@ -189,7 +189,7 @@ public class SideBar extends JPanel{
                                                                 int remove = 0;
                                                                 if (GameRunner.getPlayer(2).getTotalResources() > 7)
                                                                     remove = GameRunner.getPlayer(2).getTotalResources() / 2;
-                                                                inputResourcesPanel(remove, GameRunner.getPlayer(2), "Remove " + remove + " resources", false);
+                                                                inputResourcesPanel(remove, GameRunner.getPlayer(2),"Click to remove " + remove + " resources", false);
                                                                 timer = new Timer(INTERVAL,
                                                                         new ActionListener() {
                                                                             public void actionPerformed(ActionEvent evt) {
@@ -199,7 +199,7 @@ public class SideBar extends JPanel{
                                                                                     int remove = 0;
                                                                                     if (GameRunner.getPlayer(3).getTotalResources() > 7)
                                                                                         remove = GameRunner.getPlayer(3).getTotalResources() / 2;
-                                                                                    inputResourcesPanel(remove, GameRunner.getPlayer(3), "Remove " + remove + " resources", false);
+                                                                                    inputResourcesPanel(remove, GameRunner.getPlayer(3), "Click to remove " + remove + " resources", false);
                                                                                     timer = new Timer(INTERVAL,
                                                                                             new ActionListener() {
                                                                                                 public void actionPerformed(ActionEvent evt) {
@@ -207,7 +207,7 @@ public class SideBar extends JPanel{
                                                                                                         timer.stop();
                                                                                                         GameRunner.getPlayer(3).removeResources(inputResources);
                                                                                                         display.getBoard().placeRobber();
-                                                                                                        placePanel("Move the robber...");
+                                                                                                        placePanel("Move the robber");
                                                                                                         timer = new Timer(INTERVAL,
                                                                                                                 new ActionListener() {
                                                                                                                     public void actionPerformed(ActionEvent evt) {
@@ -370,7 +370,7 @@ public class SideBar extends JPanel{
                 timer.start();
             }
         });
-        tradeStock.setText("the stock");
+        tradeStock.setText("The stock");
         tradePanel.add(new KComponent(tradeStock, new Rectangle(7,6,6,2)));
 
         // Return to main panel
@@ -397,11 +397,11 @@ public class SideBar extends JPanel{
 
                 if (bought == 0) {
                     display.getBoard().placeSettlement(1);
-                    placePanel("Place a settlement...");
+                    placePanel(GameRunner.getCurrentPlayer() + " Place a settlement");
                     timer = new Timer(INTERVAL,
                             new ActionListener() {
                                 public void actionPerformed(ActionEvent evt) {
-                                    if(display.getBoard().getState() == 2){
+                                    if(display.getBoard().getState() == 3){
 
                                     }
                                     else {
